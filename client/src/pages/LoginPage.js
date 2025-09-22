@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
-const LoginPage = () => {
+function LoginPage() {
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,7 +19,6 @@ const LoginPage = () => {
     setStep(2);
   };
 
-  // Step 2: Enter password
   const handlePasswordSubmit = async (e) => {
     e.preventDefault();
     if (!password) {
@@ -87,6 +86,6 @@ const LoginPage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default LoginPage;

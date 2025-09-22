@@ -4,7 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 const regions = ['United States', 'Canada', 'Europe', 'Asia', 'Australia'];
 const languages = ['English', 'French', 'Spanish', 'German', 'Chinese'];
 
-const SignupPage = () => {
+function SignupPage() {
   const [step, setStep] = useState(1);
   const [region, setRegion] = useState('');
   const [language, setLanguage] = useState('');
@@ -28,8 +28,6 @@ const SignupPage = () => {
     setError('');
     setStep(2);
   };
-
-  // Step 2: Email, Password, Confirm Password, Tesla Updates
   const handleStep2 = async (e) => {
     e.preventDefault();
     if (!email || !password || !confirmPassword) {
@@ -141,6 +139,6 @@ const SignupPage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default SignupPage;

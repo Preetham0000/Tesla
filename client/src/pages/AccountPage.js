@@ -78,9 +78,9 @@ const AccountPage = () => {
   }
 
   return (
-    <div style={{ display: 'flex', minHeight: '80vh', background: '#fff' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', minHeight: '80vh', background: '#fff' }}>
       {/* Sidebar */}
-      <div style={{ width: 220, background: '#fafbfc', borderRight: '1px solid #eee', padding: '32px 0' }}>
+      <div style={{ width: '100%', maxWidth: 220, background: '#fafbfc', borderRight: '1px solid #eee', padding: '32px 0', marginBottom: 24 }}>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
           {sidebarItems.map((item, idx) => (
             <li key={item.label} onClick={() => handleSidebarClick(idx, item)}
@@ -98,19 +98,19 @@ const AccountPage = () => {
         </ul>
       </div>
       {/* Main Content */}
-      <div style={{ flex: 1, padding: '48px 40px' }}>
+      <div style={{ flex: 1, minWidth: 280, padding: '32px 16px' }}>
         <h2 style={{ fontSize: '2.2rem', fontWeight: 600, marginBottom: 32 }}>My Products</h2>
-        <div style={{ display: 'flex', gap: 32 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, justifyContent: 'center' }}>
           {productCards.map((card, idx) => (
             <div key={idx} style={{
-              width: 320,
+              width: '100%', maxWidth: 320,
               background: '#fff',
               border: '1px solid #e0e0e0',
               borderRadius: 10,
               boxShadow: '0 2px 8px #eee',
               opacity: card.faded ? 0.5 : 1,
               overflow: 'hidden',
-              display: 'flex', flexDirection: 'column', justifyContent: 'space-between'
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between', marginBottom: 24
             }}>
               <img src={card.img} alt={card.title} style={{ width: '100%', height: 120, objectFit: 'cover', background: '#f5f5f5' }} />
               <div style={{ padding: '18px 20px' }}>
