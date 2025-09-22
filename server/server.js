@@ -2,16 +2,36 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsdoc = require('swagger-jsdoc');
 
 // Load environment variables
 dotenv.config();
 
 // Import routes
 const authRoutes = require('./routes/auth');
-const carRoutes = require('./routes/cars'); // <-- Add this line
+const carRoutes = require('./routes/cars');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Swagger setup
+const swaggerOptions = {
+    definition: {
+        openapi: '3.0.0',
+        info: {
+            title: 'Tesla API',
+            version: '1.0.0',
+            description: 'API documentation for Tesla clone backend',
+        },
+        servers: [
+            { url: 'http://localhost:5000' }
+        ],
+    },
+    apis: ['./routes/*.js'],
+};
+const swaggerSpec = swaggerJsdoc(swaggerOptions);
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Middleware
 app.use(cors());

@@ -30,13 +30,13 @@ const Navbar = () => {
               <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
             </svg>
           </button>
-          {/* User Icon */}
-          <button className="bg-transparent border-none p-0 m-0" aria-label="Account" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+          {/* User Icon - Link to Login */}
+          <Link to="/login" aria-label="Account" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, margin: 0, display: 'flex', alignItems: 'center' }}>
             <svg width="28" height="28" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24">
               <circle cx="12" cy="8" r="4"/>
               <path d="M4 20c0-4 8-4 8-4s8 0 8 4"/>
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </nav>
