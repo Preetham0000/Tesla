@@ -67,6 +67,7 @@ const HeroCarousel = () => {
         maxWidth: 900,
         margin: '0 auto',
         padding: '7vw 2vw 0 2vw',
+        
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
