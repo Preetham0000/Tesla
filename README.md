@@ -55,6 +55,10 @@ A full-stack Tesla clone web application built with React, Express, and MongoDB.
    ```
 6. Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
+## API Documentation
+
+Interactive API docs are available at [http://localhost:5000/docs](http://localhost:5000/docs) (Swagger UI). You can explore, test, and view all backend endpoints here.
+
 ## Folder Structure
 
 ```
